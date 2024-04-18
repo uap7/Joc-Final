@@ -13,3 +13,7 @@ config_version=5
 config/name="Joc Final"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[physics]
+
+2d/default_gravity=3000.0
