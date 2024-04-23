@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://n0mexpidl0sh" path="res://PlayerExplosion_02.png" id="3_veoih"]
 [ext_resource type="Script" path="res://Icon.gd" id="4_esj80"]
 [ext_resource type="Texture2D" uid="uid://oad260kiawta" path="res://images-removebg-preview.png" id="4_s5tu5"]
-[ext_resource type="PackedScene" uid="uid://bt5clnwbavo58" path="res://Punxa.tscn" id="5_0dibv"]
+[ext_resource type="PackedScene" uid="uid://d6j2gk0evin7" path="res://Punxa.tscn" id="5_0dibv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ns660"]
 atlas = ExtResource("2_w4ptw")
@@ -537,10 +537,7 @@ texture_filter = 1
 position = Vector2(53.5, 479.5)
 scale = Vector2(0.679687, 0.648438)
 sprite_frames = SubResource("SpriteFrames_36024")
-animation = &"explosion"
 autoplay = "default"
-frame = 7
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(53.25, 477.375)
@@ -570,4 +567,5 @@ script = ExtResource("4_esj80")
 [node name="Area2D" parent="." instance=ExtResource("5_0dibv")]
 position = Vector2(3080, 450)
 
+[connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
