@@ -26,7 +26,13 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	if is_zero_approx(velocity.x):
+		
 		mor()
 
 func mor():
 	print('Uix: %.2f' % [velocity.x])
+	position = Vector2(100.25,position.y)
+
+
+func _on_area_2d_body_entered(body):
+	mor()

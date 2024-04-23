@@ -1,17 +1,48 @@
-[gd_scene load_steps=11 format=3 uid="uid://c02nef5xavj8f"]
+[gd_scene load_steps=21 format=3 uid="uid://c02nef5xavj8f"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_mxs5j"]
 [ext_resource type="Texture2D" uid="uid://6ou2y8dt4oew" path="res://icon.svg" id="2_w4ptw"]
 [ext_resource type="Texture2D" uid="uid://io533vnebx2y" path="res://Terrain (16x16).png" id="3_n0052"]
+[ext_resource type="Texture2D" uid="uid://n0mexpidl0sh" path="res://PlayerExplosion_02.png" id="3_veoih"]
 [ext_resource type="Script" path="res://Icon.gd" id="4_esj80"]
+[ext_resource type="Texture2D" uid="uid://oad260kiawta" path="res://images-removebg-preview.png" id="4_s5tu5"]
+[ext_resource type="PackedScene" uid="uid://bt5clnwbavo58" path="res://Punxa.tscn" id="5_0dibv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ns660"]
 atlas = ExtResource("2_w4ptw")
 region = Rect2(0, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i02ux"]
-atlas = ExtResource("2_w4ptw")
-region = Rect2(0, 0, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_cumdx"]
+atlas = ExtResource("3_veoih")
+region = Rect2(320, 160, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vocxs"]
+atlas = ExtResource("3_veoih")
+region = Rect2(320, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yc0p5"]
+atlas = ExtResource("3_veoih")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y331m"]
+atlas = ExtResource("3_veoih")
+region = Rect2(0, 160, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqyql"]
+atlas = ExtResource("3_veoih")
+region = Rect2(160, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qryad"]
+atlas = ExtResource("3_veoih")
+region = Rect2(0, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r1yt"]
+atlas = ExtResource("3_veoih")
+region = Rect2(160, 160, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1kqb"]
+atlas = ExtResource("4_s5tu5")
+region = Rect2(120, 0, 40, 40)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_36024"]
 animations = [{
@@ -25,11 +56,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i02ux")
+"texture": SubResource("AtlasTexture_cumdx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vocxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yc0p5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y331m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqyql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qryad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r1yt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1kqb")
 }],
-"loop": true,
-"name": &"new_animation",
-"speed": 5.0
+"loop": false,
+"name": &"explosion",
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjd3y"]
@@ -485,12 +537,22 @@ texture_filter = 1
 position = Vector2(53.5, 479.5)
 scale = Vector2(0.679687, 0.648438)
 sprite_frames = SubResource("SpriteFrames_36024")
-animation = &"new_animation"
+animation = &"explosion"
 autoplay = "default"
+frame = 7
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(53.25, 477.375)
 shape = SubResource("RectangleShape2D_kjd3y")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(517, 401)
+rotation = 3.14159
+scale = Vector2(2.888, -9.00002)
+skew = -0.237375
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -505,10 +567,7 @@ scale = Vector2(1, 0.21875)
 texture = ExtResource("2_w4ptw")
 script = ExtResource("4_esj80")
 
-[node name="Camera2D" type="Camera2D" parent="Icon"]
-position = Vector2(502.977, -3339.59)
-rotation = 3.14159
-scale = Vector2(2.888, -40.0452)
-skew = -0.0528719
-enabled = false
-position_smoothing_enabled = true
+[node name="Area2D" parent="." instance=ExtResource("5_0dibv")]
+position = Vector2(3080, 450)
+
+[connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
