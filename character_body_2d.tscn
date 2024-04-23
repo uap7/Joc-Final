@@ -510,4 +510,5 @@ position = Vector2(502.977, -3339.59)
 rotation = 3.14159
 scale = Vector2(2.888, -40.0452)
 skew = -0.0528719
+enabled = false
 position_smoothing_enabled = true
