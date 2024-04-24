@@ -3,10 +3,12 @@ extends CharacterBody2D
 
 var SPEED = 700
 const JUMP_VELOCITY = -1100
-
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+@onready var trail = $trail
 @onready var animacio = $AnimatedSprite2D
+@onready var rocket = $rocket
+
 var is_exploding = false
 var game_started = false
 
@@ -16,9 +18,13 @@ func _ready():
 	
 func _physics_process(delta):
 	# Add the gravity.
+	game_started = false
 	if not is_exploding:
 		if not is_on_floor():
 			velocity.y += gravity * delta
+			trail.animation = "none"
+		if is_on_floor():
+			trail.animation = "default"
 	
 		# Handle jump.
 		if Input.is_action_pressed("ui_up") and is_on_floor():
@@ -33,16 +39,16 @@ func _physics_process(delta):
 	 
 		move_and_slide()
 	
-	if game_started and is_zero_approx(velocity.x):
+	if game_started == false and is_zero_approx(velocity.x):
 		mor()
 
 	# Set game_started to true after the first frame
 	game_started = true
 
-
 func mor():
 	# Set the animation to 'explosion' and play it
 	is_exploding = true
+	trail.animation = "none"
 	animacio.animation = "explosion"
 	animacio.play()
 
@@ -66,3 +72,10 @@ func _on_AnimatedSprite2D_animation_finished():
 func _on_area_2d_body_entered(body):
 	if game_started:
 		mor()
+
+
+
+
+func _on_portal_body_entered(body):
+	rocket.animation = "ship"
+	

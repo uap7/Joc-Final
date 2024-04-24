@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://by6oxg3ods1df"]
 
-[ext_resource type="Texture2D" uid="uid://bssbpf84bkbsb" path="res://logo - GAME OVER.png" id="1_rjond"]
+[ext_resource type="Texture2D" uid="uid://bssbpf84bkbsb" path="res://Sprites/logo - GAME OVER.png" id="1_rjond"]
 
 [node name="Logo-GameOver" type="Sprite2D"]
 position = Vector2(593, 297)

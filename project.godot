@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Joc Final"
-run/main_scene="res://character_body_2d.tscn"
+run/main_scene="res://Escenes/character_body_2d.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Sprites/icon.svg"
 
 [physics]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5fs6hdtd4jbn"
-path="res://.godot/imported/images.png-b603883770f213c0c175102e3045df3b.ctex"
+uid="uid://cf62jeaenua6v"
+path="res://.godot/imported/Coet-removebg-preview.png-f282068075f7b733a4c1c10beeadfa5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images.png"
-dest_files=["res://.godot/imported/images.png-b603883770f213c0c175102e3045df3b.ctex"]
+source_file="res://Sprites/Coet-removebg-preview.png"
+dest_files=["res://.godot/imported/Coet-removebg-preview.png-f282068075f7b733a4c1c10beeadfa5d.ctex"]
 
 [params]
 
