@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://c02nef5xavj8f"]
+[gd_scene load_steps=36 format=3 uid="uid://c02nef5xavj8f"]
 
 [ext_resource type="Script" path="res://Guions/CharacterBody2D.gd" id="1_voyvd"]
 [ext_resource type="Texture2D" uid="uid://6ou2y8dt4oew" path="res://Sprites/icon.svg" id="2_gcquq"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dbi16iyqhiayt" path="res://Sprites/5398536-removebg-preview.png" id="5_ukw2w"]
 [ext_resource type="Texture2D" uid="uid://io533vnebx2y" path="res://Sprites/Terrain (16x16).png" id="6_1t2hg"]
 [ext_resource type="Texture2D" uid="uid://cf62jeaenua6v" path="res://Sprites/Coet-removebg-preview.png" id="6_hec3m"]
-[ext_resource type="Script" path="res://Guions/Icon.gd" id="7_sieb0"]
 [ext_resource type="PackedScene" uid="uid://d6j2gk0evin7" path="res://Escenes/Punxa.tscn" id="8_ejxw5"]
 [ext_resource type="PackedScene" uid="uid://dx03nt2sh7wx0" path="res://Escenes/portal.tscn" id="9_7jj44"]
 
@@ -642,6 +641,7 @@ sources/0 = SubResource("TileSetAtlasSource_vcyso")
 [node name="Personatge" type="Node"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(72.9562, -129.703)
 script = ExtResource("1_voyvd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
@@ -678,19 +678,12 @@ scale = Vector2(0.839486, 1.0126)
 sprite_frames = SubResource("SpriteFrames_5bpd2")
 animation = &"ship"
 autoplay = "none"
-frame_progress = 0.957371
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(73, 1043)
-scale = Vector2(1, 0.21875)
-texture = ExtResource("2_gcquq")
-script = ExtResource("7_sieb0")
-
-[node name="Area2D" parent="." instance=ExtResource("8_ejxw5")]
+[node name="Punxa" parent="." instance=ExtResource("8_ejxw5")]
 position = Vector2(3080, 450)
 
 [node name="Portal" parent="." instance=ExtResource("9_7jj44")]
-position = Vector2(4460, 382)
+position = Vector2(4456, 371)
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -700,5 +693,6 @@ format = 2
 layer_0/tile_data = PackedInt32Array(720896, 786432, 5, 720897, 786432, 5, 720898, 786432, 5, 720899, 786432, 5, 720900, 786432, 5, 720901, 786432, 5, 720902, 786432, 5, 720903, 786432, 5, 720904, 786432, 5, 720905, 786432, 5, 720906, 786432, 5, 720907, 786432, 5, 720908, 786432, 5, 720910, 786432, 5, 720911, 786432, 5, 720912, 786432, 5, 720913, 786432, 5, 720914, 786432, 5, 720915, 786432, 5, 720916, 786432, 5, 720917, 786432, 5, 720918, 786432, 5, 720919, 786432, 5, 720920, 786432, 5, 720921, 786432, 5, 720922, 786432, 5, 720923, 786432, 5, 720924, 786432, 5, 720925, 786432, 5, 720926, 786432, 5, 720927, 786432, 5, 720928, 786432, 5, 720929, 786432, 5, 720930, 786432, 5, 720931, 786432, 5, 720932, 786432, 5, 720933, 786432, 5, 720934, 786432, 5, 720935, 786432, 5, 720936, 786432, 5, 720937, 786432, 5, 720938, 786432, 5, 720939, 786432, 5, 720940, 786432, 5, 720941, 786432, 5, 655381, 786432, 5, 589845, 786432, 5, 524309, 786432, 5, 524310, 786432, 5, 589846, 786432, 5, 655382, 786432, 5, 720942, 786432, 5, 720943, 786432, 5, 720944, 786432, 5, 720945, 786432, 5, 720909, 786432, 5, 720946, 786432, 5, 720949, 786432, 5, 720948, 786432, 5, 720947, 786432, 5, 720950, 786432, 5, 720951, 786432, 5, 720952, 786432, 5, 720953, 786432, 5, 720954, 786432, 5, 720955, 786432, 5, 720956, 786432, 5, 720957, 786432, 5, 720958, 786432, 5, 720959, 786432, 5, 720960, 786432, 5, 720961, 786432, 5, 720962, 786432, 5, 720963, 786432, 5, 720964, 786432, 5, 720965, 786432, 5, 720966, 786432, 5, 720967, 786432, 5, 720968, 786432, 5, 720969, 786432, 5, 720970, 786432, 5, 720971, 786432, 5, 720972, 786432, 5, 720973, 786432, 5, 720974, 786432, 5, 720975, 786432, 5, 720976, 786432, 5, 720977, 786432, 5, 720978, 786432, 5, 720979, 786432, 5, 720980, 786432, 5, 720981, 786432, 5, 720982, 786432, 5, 720983, 786432, 5, 720984, 786432, 5, 720985, 786432, 5, 720986, 786432, 5, 720987, 786432, 5, 720988, 786432, 5, 720989, 786432, 5, 655388, 786432, 5, 589852, 786432, 5, 589853, 786432, 5, 524317, 786432, 5, 458781, 786432, 5, 393245, 786432, 5, 393244, 786432, 5, 458780, 786432, 5, 524316, 786432, 5, 655389, 786432, 5, 655395, 786432, 5, 589859, 786432, 5, 524323, 786432, 5, 458787, 786432, 5, 393251, 786432, 5, 327715, 786432, 5, 262179, 786432, 5, 262180, 786432, 5, 327716, 786432, 5, 393252, 786432, 5, 458788, 786432, 5, 524324, 786432, 5, 589860, 786432, 5, 655396, 786432, 5)
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Punxa" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Punxa" to="CharacterBody2D" method="_on_punxa_body_entered"]
 [connection signal="body_entered" from="Portal" to="CharacterBody2D" method="_on_portal_body_entered"]
