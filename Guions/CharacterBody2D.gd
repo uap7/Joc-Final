@@ -14,6 +14,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var is_exploding = false
 var is_portal = false
+var is_portal_g = false
 
 func _ready():
 	animacio.animation = "default"
