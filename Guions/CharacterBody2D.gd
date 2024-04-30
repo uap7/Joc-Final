@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 var SPEED = 700
 const JUMP_VELOCITY = -1100
-const ship_accel = 2
+const ship_accel = 0.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var trail = $trail
@@ -37,12 +37,10 @@ func _physics_process(delta):
 				velocity.y = ship_accel * JUMP_VELOCITY
 				velocity.x = SPEED
 				var tween = create_tween()
-				tween.tween_property($AnimatedSprite2D, "rotation_degrees", $AnimatedSprite2D.rotation_degrees - fmod($AnimatedSprite2D.rotation_degrees, 90), 0.6).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 			else:
 				velocity.y += gravity * delta
 				var tween = create_tween()
-				tween.tween_property($AnimatedSprite2D, "rotation_degrees", $AnimatedSprite2D.rotation_degrees - fmod($AnimatedSprite2D.rotation_degrees, -90), 0.6).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
-
+	
 		move_and_slide()
 	
 	if is_zero_approx(velocity.x):
@@ -52,6 +50,7 @@ func _physics_process(delta):
 func mor():
 	is_exploding = true
 	trail.animation = "none"
+	rocket.animation = "none"
 	animacio.animation = "explosion"
 	animacio.play()
 	animacio.connect("animation_finished", _on_AnimatedSprite2D_animation_finished)
@@ -71,7 +70,6 @@ func _on_portal_body_entered(portal):
 	rocket.animation = "ship"
 	is_portal = true
 
-func _on_punxa_body_entered():
-	"punxa"
+func _on_punxa_body_entered(punxa):
 	mor()
 	
