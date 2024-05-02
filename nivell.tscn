@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dh2qmohg4k0sb"]
 
 [ext_resource type="AudioStream" uid="uid://cuklj383y2yct" path="res://Martin Garrix - Animals (Official Video).mp3" id="1_n482k"]
-[ext_resource type="Texture2D" uid="uid://cy522hmtrnjv" path="res://Captura de pantalla 2024-04-30 094907.png" id="2_xeb1u"]
+[ext_resource type="PackedScene" uid="uid://cuabl7u4ei7fx" path="res://prova terra.tscn" id="2_0eyuh"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -9,10 +9,4 @@
 stream = ExtResource("1_n482k")
 autoplay = true
 
-[node name="CapturaDePantalla2024-04-30094907" type="Sprite2D" parent="."]
-position = Vector2(388, 565)
-texture = ExtResource("2_xeb1u")
-
-[node name="CapturaDePantalla2024-04-30094908" type="Sprite2D" parent="."]
-position = Vector2(1158, 564)
-texture = ExtResource("2_xeb1u")
+[node name="StaticBody2D" parent="." instance=ExtResource("2_0eyuh")]
