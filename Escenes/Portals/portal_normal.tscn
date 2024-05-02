@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://crfvhdqs1u117"]
+
+[ext_resource type="Texture2D" uid="uid://d1ja3s6go2fpk" path="res://portal_normal_fax-removebg-preview.png" id="1_l4h2m"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sqi7r"]
+height = 410.0
+
+[node name="portal_normal" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_l4h2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-68, 0)
+shape = SubResource("CapsuleShape2D_sqi7r")
