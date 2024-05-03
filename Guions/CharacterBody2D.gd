@@ -4,6 +4,7 @@ extends CharacterBody2D
 var SPEED = 700
 const JUMP_VELOCITY = -1100
 const ship_accel = 0.5
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var trail = $trail
@@ -20,6 +21,7 @@ var is_portal_g = false
 
 func _ready():
 	animacio.animation = "default"
+	velocity.x = SPEED
 	
 func _physics_process(delta):
 	if not is_exploding:
@@ -97,4 +99,9 @@ func _on_punxa_body_entered(punxa):
 func _on_portal_g_body_entered(body):
 	is_portal = false
 	is_portal_g = true
+	rocket.animation = "none"
+	
+func _on_portal_normal_body_entered(body):
+	is_portal = false
+	is_portal_g = false
 	rocket.animation = "none"
