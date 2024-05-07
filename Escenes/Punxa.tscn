@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://d6j2gk0evin7"]
+[gd_scene load_steps=4 format=3 uid="uid://d6j2gk0evin7"]
 
+[ext_resource type="Script" path="res://Escenes/Punxa.gd" id="1_r70g7"]
 [ext_resource type="Texture2D" uid="uid://0tx6ha1pi83d" path="res://Grounds/Captura_de_pantalla_2024-05-03_142255-removebg-preview.png" id="1_rlret"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ifgxo"]
@@ -7,6 +8,7 @@ radius = 21.0
 height = 50.0
 
 [node name="Area2D" type="Area2D"]
+script = ExtResource("1_r70g7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 1)
@@ -15,3 +17,5 @@ texture = ExtResource("1_rlret")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 19)
 shape = SubResource("CapsuleShape2D_ifgxo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

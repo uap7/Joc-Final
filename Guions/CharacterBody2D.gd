@@ -13,9 +13,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var rocket = $rocket
 @onready var trail_2 = $trail2
 
-
-
-
 var is_exploding = false
 var is_portal = false
 var is_portal_g = false
@@ -52,7 +49,9 @@ func _physics_process(delta):
 				if Input.is_action_pressed("ui_up") and is_on_ceiling():
 					velocity.y = -JUMP_VELOCITY
 					var tween = create_tween()
-					tween.tween_property($AnimatedSprite2D, "rotation_degrees", $AnimatedSprite2D.rotation_degrees - fmod($AnimatedSprite2D.rotation_degrees, 50), 0.6).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+					tween.tween_property($AnimatedSprite2D, "rotation_degrees", $AnimatedSprite2D.rotation_degrees - fmod($AnimatedSprite2D.rotation_degrees, -90) + 2*(-90), 0.6).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+					#var tween = create_tween()
+					#tween.tween_property($AnimatedSprite2D, "rotation_degrees", $AnimatedSprite2D.rotation_degrees - fmod($AnimatedSprite2D.rotation_degrees, 50), 0.6).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 					
 			velocity.x = SPEED
 		elif is_portal:
@@ -97,12 +96,10 @@ func _on_AnimatedSprite2D_animation_finished():
 	rocket.animation = "none"
 
 func _on_portal_body_entered(portal):
+	print(portal.name)
 	rocket.animation = "ship"
 	is_portal = true
 	is_portal_g = false
-
-func _on_punxa_body_entered(punxa):
-	mor()
 
 func _on_portal_g_body_entered(body):
 	is_portal = false
@@ -114,3 +111,7 @@ func _on_portal_normal_body_entered(body):
 	is_portal_g = false
 	rocket.animation = "none"
 
+
+
+func _on_area_2d_body_entered(body):
+	pass # Replace with function body.
