@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dh2qmohg4k0sb"]
+[gd_scene load_steps=3 format=3 uid="uid://dbwbhp6yjm4da"]
 
 [ext_resource type="AudioStream" uid="uid://cuklj383y2yct" path="res://Martin Garrix - Animals (Official Video).mp3" id="1_n482k"]
-[ext_resource type="PackedScene" uid="uid://cuabl7u4ei7fx" path="res://prova terra.tscn" id="2_0eyuh"]
+[ext_resource type="PackedScene" uid="uid://c2qa3iidnvohd" path="res://prova terra.tscn" id="2_0eyuh"]
 
 [node name="Node2D" type="Node2D"]
 

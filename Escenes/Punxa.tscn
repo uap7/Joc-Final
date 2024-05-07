@@ -1,16 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://d6j2gk0evin7"]
 
-[ext_resource type="Texture2D" uid="uid://oad260kiawta" path="res://Sprites/images-removebg-preview.png" id="1_37n5m"]
+[ext_resource type="Texture2D" uid="uid://0tx6ha1pi83d" path="res://Grounds/Captura_de_pantalla_2024-05-03_142255-removebg-preview.png" id="1_rlret"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6c2o2"]
-radius = 31.0
-height = 90.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ifgxo"]
+radius = 21.0
+height = 50.0
 
 [node name="Area2D" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_37n5m")
+position = Vector2(0, 1)
+texture = ExtResource("1_rlret")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5, 37)
-shape = SubResource("CapsuleShape2D_6c2o2")
+position = Vector2(2, 19)
+shape = SubResource("CapsuleShape2D_ifgxo")
