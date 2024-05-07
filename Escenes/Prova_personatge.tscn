@@ -691,7 +691,7 @@ autoplay = "default"
 frame_progress = 0.276994
 
 [node name="Punxa" parent="." instance=ExtResource("7_wqt5w")]
-position = Vector2(3080, 450)
+position = Vector2(3082, 484)
 
 [node name="Portal" parent="." instance=ExtResource("8_25vir")]
 position = Vector2(4456, 371)
