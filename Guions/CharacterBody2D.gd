@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var attempts = 1
 
 var SPEED = 700
 const JUMP_VELOCITY = -1100
@@ -51,16 +52,23 @@ func _physics_process(delta):
 				if Input.is_action_pressed("ui_up") and is_on_ceiling():
 					velocity.y = -JUMP_VELOCITY
 					var tween = create_tween()
-					tween.tween_property($AnimatedSprite2D, "rotation_degrees", $AnimatedSprite2D.rotation_degrees - fmod($AnimatedSprite2D.rotation_degrees, -90) + 2*(-90), 0.6).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+					tween.tween_property($AnimatedSprite2D, "rotation_degrees", $AnimatedSprite2D.rotation_degrees - fmod($AnimatedSprite2D.rotation_degrees, 50), 0.6).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+					
 			velocity.x = SPEED
 		elif is_portal:
 			if Input.is_action_pressed("ui_up"):
 				velocity.y = ship_accel * JUMP_VELOCITY
 				velocity.x = SPEED
-				var tween = create_tween()
+				#var tween_ship = create_tween()
+				#var tween = create_tween()
+				#tween_ship.tween_property($AnimatedSprite2D, "rotation_degrees", $AnimatedSprite2D.rotation_degrees - fmod($AnimatedSprite2D.rotation_degrees, 50), 0.6).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+				#tween.tween_property($AnimatedSprite2D, "rotation_degrees", $AnimatedSprite2D.rotation_degrees - fmod($AnimatedSprite2D.rotation_degrees, 50), 0.6).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 			else:
 				velocity.y += gravity * delta
-				var tween = create_tween()
+				#var tween_ship = create_tween()
+				#var tween = create_tween()
+				#tween_ship.tween_property($AnimatedSprite2D, "rotation_degrees", $AnimatedSprite2D.rotation_degrees - fmod($AnimatedSprite2D.rotation_degrees, -50), 0.6).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+				#tween.tween_property($AnimatedSprite2D, "rotation_degrees", $AnimatedSprite2D.rotation_degrees - fmod($AnimatedSprite2D.rotation_degrees, -50), 0.6).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 	
 		move_and_slide()
 	
@@ -106,3 +114,4 @@ func _on_portal_normal_body_entered(body):
 	is_portal = false
 	is_portal_g = false
 	rocket.animation = "none"
+
