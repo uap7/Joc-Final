@@ -7,7 +7,7 @@ size = Vector2(58, 57)
 
 [node name="Area2D" type="Area2D"]
 
-[node name="CapturaDePantalla2024-05-09081726" type="Sprite2D" parent="."]
+[node name="cub" type="Sprite2D" parent="."]
 position = Vector2(88, 59)
 texture = ExtResource("1_dmcv2")
 
