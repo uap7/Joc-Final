@@ -88,7 +88,8 @@ func _on_AnimatedSprite2D_animation_finished():
 	animacio.disconnect("animation_finished",_on_AnimatedSprite2D_animation_finished)
 
 	position = Vector2(100.25,position.y)
-
+	$"Música".stop()
+	$"Música".play()
 	animacio.animation = "default"
 	animacio.play()
 	is_exploding = false
