@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1vpck6w3y3so"]
+
+[ext_resource type="Texture2D" uid="uid://cnwenfbtihe6p" path="res://Captura de pantalla 2024-05-09 081726.png" id="1_dmcv2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4a5h"]
+size = Vector2(58, 57)
+
+[node name="Area2D" type="Area2D"]
+
+[node name="CapturaDePantalla2024-05-09081726" type="Sprite2D" parent="."]
+position = Vector2(88, 59)
+texture = ExtResource("1_dmcv2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(88, 59.5)
+shape = SubResource("RectangleShape2D_d4a5h")
