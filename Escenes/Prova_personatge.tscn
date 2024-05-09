@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dv4ne20tw3sn"]
+[gd_scene load_steps=39 format=3 uid="uid://dv4ne20tw3sn"]
 
 [ext_resource type="Script" path="res://Guions/CharacterBody2D.gd" id="1_m8j1l"]
 [ext_resource type="Texture2D" uid="uid://6ou2y8dt4oew" path="res://Sprites/icon.svg" id="2_7xlks"]
@@ -11,6 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://io533vnebx2y" path="res://Sprites/Terrain (16x16).png" id="9_5iyjh"]
 [ext_resource type="PackedScene" uid="uid://f6wlc5yhbvqr" path="res://Escenes/Portals/portal_(_g).tscn" id="10_b0ayp"]
 [ext_resource type="PackedScene" uid="uid://crfvhdqs1u117" path="res://Escenes/Portals/portal_normal.tscn" id="11_2fux2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkaq3"]
+size = Vector2(82, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjd3y"]
+size = Vector2(83.5, 76.75)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ns660"]
 atlas = ExtResource("2_7xlks")
@@ -87,9 +93,6 @@ animations = [{
 "name": &"explosion",
 "speed": 10.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjd3y"]
-size = Vector2(83.5, 76.75)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mu1n6"]
 atlas = ExtResource("5_bt8ny")
@@ -637,14 +640,26 @@ texture = ExtResource("9_5iyjh")
 20:10/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_a1ar0"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_vcyso")
 
 [node name="Personatge" type="Node"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(72.9562, -129.703)
+collision_mask = 3
 script = ExtResource("1_m8j1l")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+position = Vector2(13.0438, 91.703)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+position = Vector2(41, 393.5)
+shape = SubResource("RectangleShape2D_nkaq3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(56, 486)
+shape = SubResource("RectangleShape2D_kjd3y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_filter = 1
@@ -652,10 +667,6 @@ position = Vector2(53.5, 486.5)
 scale = Vector2(0.679687, 0.648438)
 sprite_frames = SubResource("SpriteFrames_36024")
 autoplay = "default"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(56, 486)
-shape = SubResource("RectangleShape2D_kjd3y")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(517, 401)
@@ -679,7 +690,7 @@ position = Vector2(9.27452, 528.756)
 rotation = 1.5687
 scale = Vector2(0.839486, 1.0126)
 sprite_frames = SubResource("SpriteFrames_5bpd2")
-animation = &"ship"
+animation = &"none"
 autoplay = "none"
 
 [node name="trail2" type="AnimatedSprite2D" parent="CharacterBody2D"]
@@ -713,6 +724,8 @@ position = Vector2(12716, -372)
 offset_left = 510.0
 offset_right = 1125.0
 offset_bottom = 35.0
+
+[node name="Punxes" type="Node" parent="."]
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Punxa" to="CharacterBody2D" method="_on_punxa_body_entered"]
