@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://byxvfo2pjxrec"]
+[gd_scene load_steps=36 format=3 uid="uid://byxvfo2pjxrec"]
 
 [ext_resource type="Texture2D" uid="uid://cy522hmtrnjv" path="res://Sprites/Captura de pantalla 2024-04-30 094907.png" id="1_843e3"]
 [ext_resource type="AudioStream" uid="uid://cuklj383y2yct" path="res://Martin Garrix - Animals (Official Video).mp3" id="2_bi3y6"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://oad260kiawta" path="res://Sprites/images-removebg-preview.png" id="6_dbvnm"]
 [ext_resource type="Texture2D" uid="uid://dbi16iyqhiayt" path="res://Sprites/5398536-removebg-preview.png" id="7_rpcmv"]
 [ext_resource type="Texture2D" uid="uid://cf62jeaenua6v" path="res://Sprites/Coet-removebg-preview.png" id="8_u61c3"]
-[ext_resource type="PackedScene" uid="uid://d6j2gk0evin7" path="res://Escenes/Punxa.tscn" id="9_5e8bh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jrv7g"]
 
@@ -2377,10 +2376,7 @@ position = Vector2(-72.9562, 129.703)
 stream = ExtResource("2_bi3y6")
 autoplay = true
 
-[node name="Area2D" parent="." instance=ExtResource("9_5e8bh")]
-position = Vector2(1042, 438)
-
-[node name="Area2D2" parent="." instance=ExtResource("9_5e8bh")]
-position = Vector2(1105, 438)
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
