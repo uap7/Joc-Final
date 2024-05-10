@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnecl7u5kbi64"]
+
+[ext_resource type="Script" path="res://Guions/Punxa.gd" id="1_t502a"]
+[ext_resource type="Texture2D" uid="uid://blcy8eup2f3ac" path="res://Sprites/Tilemap/punxes_backround-removebg-preview.png" id="2_wehkx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7miqk"]
+radius = 27.1049
+height = 368.018
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bkk27"]
+radius = 24.0
+height = 92.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m4ybq"]
+radius = 22.0
+height = 126.0
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_t502a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(627.5, 243)
+scale = Vector2(2.17742, 2.58621)
+texture = ExtResource("2_wehkx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(627, 295)
+rotation = 1.57739
+shape = SubResource("CapsuleShape2D_7miqk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(556, 276)
+shape = SubResource("CapsuleShape2D_bkk27")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(754, 247)
+shape = SubResource("CapsuleShape2D_m4ybq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
