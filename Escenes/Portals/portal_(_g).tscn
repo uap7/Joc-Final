@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://f6wlc5yhbvqr"]
+[gd_scene load_steps=4 format=3 uid="uid://f6wlc5yhbvqr"]
 
+[ext_resource type="Script" path="res://Escenes/Portals/portal_(_g).gd" id="1_kb7y8"]
 [ext_resource type="Texture2D" uid="uid://davg6w470b60s" path="res://Sprites/portal2_fons-removebg-preview.png" id="1_qx8o1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0spc2"]
@@ -7,6 +8,7 @@ radius = 23.0
 height = 442.0
 
 [node name="Portal_(-g)" type="Area2D"]
+script = ExtResource("1_kb7y8")
 
 [node name="Portal2Fons-removebg-preview" type="Sprite2D" parent="."]
 position = Vector2(547, 371)
@@ -15,3 +17,5 @@ texture = ExtResource("1_qx8o1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(477, 353)
 shape = SubResource("CapsuleShape2D_0spc2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

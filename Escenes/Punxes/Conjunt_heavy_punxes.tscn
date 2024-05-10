@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://c21sljl422ei0"]
+
+[ext_resource type="PackedScene" uid="uid://cnecl7u5kbi64" path="res://Escenes/Punxes/Punxes2.tscn" id="1_v7pog"]
+
+[node name="Punxes_collective" type="Node"]
+
+[node name="Area2D" parent="." instance=ExtResource("1_v7pog")]
+texture_filter = 1
+position = Vector2(2785, -130)
+
+[node name="Area2D2" parent="." instance=ExtResource("1_v7pog")]
+texture_filter = 1
+position = Vector2(3119, -128)
+
+[node name="Area2D3" parent="." instance=ExtResource("1_v7pog")]
+texture_filter = 1
+position = Vector2(3453, -127)
+
+[node name="Area2D4" parent="." instance=ExtResource("1_v7pog")]
+texture_filter = 1
+position = Vector2(4414, -125)
+
+[node name="Area2D5" parent="." instance=ExtResource("1_v7pog")]
+texture_filter = 1
+position = Vector2(4104, -125)
+
+[node name="Area2D6" parent="." instance=ExtResource("1_v7pog")]
+texture_filter = 1
+position = Vector2(3783, -126)
+
+[node name="Area2D7" parent="." instance=ExtResource("1_v7pog")]
+texture_filter = 1
+position = Vector2(4738, -123)
+
+[node name="Area2D8" parent="." instance=ExtResource("1_v7pog")]
+texture_filter = 1
+position = Vector2(5709, -121)
+
+[node name="Area2D9" parent="." instance=ExtResource("1_v7pog")]
+texture_filter = 1
+position = Vector2(5399, -121)
+
+[node name="Area2D10" parent="." instance=ExtResource("1_v7pog")]
+texture_filter = 1
+position = Vector2(5073, -123)

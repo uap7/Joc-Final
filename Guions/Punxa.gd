@@ -7,4 +7,8 @@ extends Area2D
 
 
 func _on_body_entered(body):
-	body.mor()
+	if body.name == "TileMap":
+		pass
+	
+	else:
+		body.mor()

@@ -94,17 +94,17 @@ func _on_AnimatedSprite2D_animation_finished():
 	is_portal = false
 	rocket.animation = "none"
 
-func _on_portal_body_entered(portal):
+func portal():
 	rocket.animation = "ship"
 	is_portal = true
 	is_portal_g = false
 
-func _on_portal_g_body_entered(body):
+func portal_g():
 	is_portal = false
 	is_portal_g = true
 	rocket.animation = "none"
 	
-func _on_portal_normal_body_entered(body):
+func portal_nomal():
 	is_portal = false
 	is_portal_g = false
 	rocket.animation = "none"

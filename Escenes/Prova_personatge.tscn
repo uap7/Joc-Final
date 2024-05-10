@@ -6,12 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://oad260kiawta" path="res://Sprites/images-removebg-preview.png" id="4_p4p5d"]
 [ext_resource type="Texture2D" uid="uid://dbi16iyqhiayt" path="res://Sprites/5398536-removebg-preview.png" id="5_bt8ny"]
 [ext_resource type="Texture2D" uid="uid://cf62jeaenua6v" path="res://Sprites/Coet-removebg-preview.png" id="6_pwkfw"]
-[ext_resource type="PackedScene" uid="uid://d6j2gk0evin7" path="res://Escenes/Punxa.tscn" id="7_wqt5w"]
+[ext_resource type="PackedScene" uid="uid://d6j2gk0evin7" path="res://Escenes/Punxes/Punxa.tscn" id="7_wqt5w"]
 [ext_resource type="PackedScene" uid="uid://dx03nt2sh7wx0" path="res://Escenes/Portals/portal.tscn" id="8_25vir"]
 [ext_resource type="Texture2D" uid="uid://io533vnebx2y" path="res://Sprites/Terrain (16x16).png" id="9_5iyjh"]
 [ext_resource type="PackedScene" uid="uid://f6wlc5yhbvqr" path="res://Escenes/Portals/portal_(_g).tscn" id="10_b0ayp"]
 [ext_resource type="PackedScene" uid="uid://crfvhdqs1u117" path="res://Escenes/Portals/portal_normal.tscn" id="11_2fux2"]
-[ext_resource type="PackedScene" uid="uid://cnecl7u5kbi64" path="res://Escenes/Punxes2.tscn" id="12_hjd3o"]
+[ext_resource type="PackedScene" uid="uid://cnecl7u5kbi64" path="res://Escenes/Punxes/Punxes2.tscn" id="12_hjd3o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjd3y"]
 size = Vector2(83.5, 76.75)
@@ -723,8 +723,8 @@ position = Vector2(2024, 343)
 scale = Vector2(0.532404, 0.580494)
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="body_entered" from="Punxa" to="CharacterBody2D" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Punxa" to="CharacterBody2D" method="_on_punxa_body_entered"]
+[connection signal="body_entered" from="Punxa" to="CharacterBody2D" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Portal" to="CharacterBody2D" method="_on_portal_body_entered"]
 [connection signal="body_entered" from="Portal_(-g)" to="CharacterBody2D" method="_on_portal_g_body_entered"]
 [connection signal="body_exited" from="Portal_(-g)" to="CharacterBody2D" method="_on_portal_g_body_exited"]
