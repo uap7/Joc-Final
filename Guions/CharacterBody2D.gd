@@ -88,8 +88,6 @@ func _on_AnimatedSprite2D_animation_finished():
 	animacio.disconnect("animation_finished",_on_AnimatedSprite2D_animation_finished)
 
 	position = Vector2(100.25,position.y)
-	$"Música".stop()
-	$"Música".play()
 	animacio.animation = "default"
 	animacio.play()
 	is_exploding = false
@@ -97,7 +95,6 @@ func _on_AnimatedSprite2D_animation_finished():
 	rocket.animation = "none"
 
 func _on_portal_body_entered(portal):
-	print(portal.name)
 	rocket.animation = "ship"
 	is_portal = true
 	is_portal_g = false
