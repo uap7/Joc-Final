@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6c3s34awmiun"
-path="res://.godot/imported/groundSquare_02_001.png-ebbbb20a399ce10e83e98b177739e743.ctex"
+uid="uid://cjiwoanctbwlg"
+path="res://.godot/imported/Bloc terra.png-65ea4220d8a60e430dae2d1fc7cfdff9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Grounds/groundSquare_02_001.png"
-dest_files=["res://.godot/imported/groundSquare_02_001.png-ebbbb20a399ce10e83e98b177739e743.ctex"]
+source_file="res://Sprites/Tilemap/Bloc terra.png"
+dest_files=["res://.godot/imported/Bloc terra.png-65ea4220d8a60e430dae2d1fc7cfdff9.ctex"]
 
 [params]
 

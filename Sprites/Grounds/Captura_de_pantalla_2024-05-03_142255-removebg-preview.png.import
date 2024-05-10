@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lh4ypmg0541s"
-path="res://.godot/imported/groundSquare_03_001.png-b1d1dc1bec098743b9e0d664403ac947.ctex"
+uid="uid://0tx6ha1pi83d"
+path="res://.godot/imported/Captura_de_pantalla_2024-05-03_142255-removebg-preview.png-50ed3c44469ee0207f7b30636737575d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Grounds/groundSquare_03_001.png"
-dest_files=["res://.godot/imported/groundSquare_03_001.png-b1d1dc1bec098743b9e0d664403ac947.ctex"]
+source_file="res://Sprites/Grounds/Captura_de_pantalla_2024-05-03_142255-removebg-preview.png"
+dest_files=["res://.godot/imported/Captura_de_pantalla_2024-05-03_142255-removebg-preview.png-50ed3c44469ee0207f7b30636737575d.ctex"]
 
 [params]
 

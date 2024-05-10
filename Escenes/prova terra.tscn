@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cuabl7u4ei7fx"]
+[gd_scene load_steps=3 format=3 uid="uid://c2qa3iidnvohd"]
 
-[ext_resource type="Texture2D" uid="uid://cy522hmtrnjv" path="res://Captura de pantalla 2024-04-30 094907.png" id="1_8vmfb"]
+[ext_resource type="Texture2D" path="res://Captura de pantalla 2024-04-30 094907.png" id="1_8vmfb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7elw0"]
 size = Vector2(1546, 176)

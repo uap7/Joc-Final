@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvyvhbnds8ey4"
-path="res://.godot/imported/groundSquare_04_001.png-b64a4eb1492f9bb2efbd6e8080321df5.ctex"
+uid="uid://dtmxx4g51la8r"
+path="res://.godot/imported/cub normal.png-ce472d579f610397ec05544bd92af457.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Grounds/groundSquare_04_001.png"
-dest_files=["res://.godot/imported/groundSquare_04_001.png-b64a4eb1492f9bb2efbd6e8080321df5.ctex"]
+source_file="res://Sprites/Tilemap/cub normal.png"
+dest_files=["res://.godot/imported/cub normal.png-ce472d579f610397ec05544bd92af457.ctex"]
 
 [params]
 

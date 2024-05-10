@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c83cbyvp167t2"
-path="res://.godot/imported/groundSquare_01_001-hd.png-c2be43fbcd42f95eb8bd979c5f695fc4.ctex"
+uid="uid://4481jmyfxipy"
+path="res://.godot/imported/groundSquare_05_001-hd.png-b2676148edf97eaa38f81dd148db2fbb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Grounds/groundSquare_01_001-hd.png"
-dest_files=["res://.godot/imported/groundSquare_01_001-hd.png-c2be43fbcd42f95eb8bd979c5f695fc4.ctex"]
+source_file="res://Sprites/Grounds/groundSquare_05_001-hd.png"
+dest_files=["res://.godot/imported/groundSquare_05_001-hd.png-b2676148edf97eaa38f81dd148db2fbb.ctex"]
 
 [params]
 

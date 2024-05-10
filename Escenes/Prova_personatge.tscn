@@ -718,8 +718,8 @@ offset_bottom = 35.0
 [node name="Punxes" type="Node" parent="."]
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="body_entered" from="Punxa" to="CharacterBody2D" method="_on_punxa_body_entered"]
 [connection signal="body_entered" from="Punxa" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Punxa" to="CharacterBody2D" method="_on_punxa_body_entered"]
 [connection signal="body_entered" from="Portal" to="CharacterBody2D" method="_on_portal_body_entered"]
 [connection signal="body_entered" from="Portal_(-g)" to="CharacterBody2D" method="_on_portal_g_body_entered"]
 [connection signal="body_exited" from="Portal_(-g)" to="CharacterBody2D" method="_on_portal_g_body_exited"]

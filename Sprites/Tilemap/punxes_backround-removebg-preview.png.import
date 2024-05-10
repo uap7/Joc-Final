@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv81efspvaafr"
-path="res://.godot/imported/groundSquare_05_001.png-b2dedc34478514884c3dca10384a3c87.ctex"
+uid="uid://blcy8eup2f3ac"
+path="res://.godot/imported/punxes_backround-removebg-preview.png-fb9d585078a42c524f602dd05156abf8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Grounds/groundSquare_05_001.png"
-dest_files=["res://.godot/imported/groundSquare_05_001.png-b2dedc34478514884c3dca10384a3c87.ctex"]
+source_file="res://Sprites/Tilemap/punxes_backround-removebg-preview.png"
+dest_files=["res://.godot/imported/punxes_backround-removebg-preview.png-fb9d585078a42c524f602dd05156abf8.ctex"]
 
 [params]
 
