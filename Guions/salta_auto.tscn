@@ -72,7 +72,7 @@ position = Vector2(163, 167)
 rotation = -1.56628
 sprite_frames = SubResource("SpriteFrames_kro0s")
 autoplay = "default"
-frame_progress = 0.654251
+frame_progress = 0.066104
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(160, 158)
