@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://crfvhdqs1u117" path="res://Escenes/Portals/portal_normal.tscn" id="5_kjang"]
 [ext_resource type="PackedScene" uid="uid://cnecl7u5kbi64" path="res://Escenes/Punxes/Punxes2.tscn" id="5_s8inu"]
 [ext_resource type="PackedScene" uid="uid://f6wlc5yhbvqr" path="res://Escenes/Portals/portal_(_g).tscn" id="8_id5pi"]
-[ext_resource type="PackedScene" uid="uid://ph8s6n053ba6" path="res://Guions/salta_auto.tscn" id="9_5rxit"]
+[ext_resource type="PackedScene" uid="uid://xfbkulrk8bsk" path="res://Guions/salta_auto.tscn" id="9_5rxit"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6xsts"]
 texture = ExtResource("1_uqxne")
@@ -3562,70 +3562,142 @@ script = ExtResource("3_xxnu3")
 texture_filter = 1
 position = Vector2(3352, -224)
 
-[node name="Portal2" parent="Portals" instance=ExtResource("3_juu8s")]
-texture_filter = 1
-position = Vector2(9686, 33)
-
 [node name="portal_normal2" parent="Portals" instance=ExtResource("5_kjang")]
 position = Vector2(7694, -357)
 scale = Vector2(0.801805, 0.698453)
 
 [node name="portal_normal3" parent="Portals" instance=ExtResource("5_kjang")]
-position = Vector2(11597, 38)
+position = Vector2(11586, -7)
 scale = Vector2(0.801805, 0.698453)
 
 [node name="Portal_(-g)" parent="Portals" instance=ExtResource("8_id5pi")]
 position = Vector2(7242, -252)
 scale = Vector2(0.844359, 0.752466)
 
+[node name="Intercalar" type="Node" parent="Portals"]
+
+[node name="portal_normal4" parent="Portals/Intercalar" instance=ExtResource("5_kjang")]
+position = Vector2(10135, -56)
+scale = Vector2(0.642891, 0.545327)
+
+[node name="Portal_(-g)2" parent="Portals/Intercalar" instance=ExtResource("8_id5pi")]
+position = Vector2(10085, -107)
+scale = Vector2(0.712942, 0.566205)
+
+[node name="portal_normal5" parent="Portals/Intercalar" instance=ExtResource("5_kjang")]
+position = Vector2(10770, -56)
+scale = Vector2(0.653239, 0.566695)
+
+[node name="Portal_(-g)3" parent="Portals/Intercalar" instance=ExtResource("8_id5pi")]
+position = Vector2(10719.2, -108.998)
+scale = Vector2(0.724417, 0.588392)
+
 [node name="Punxes_single" type="Node" parent="."]
 
-[node name="Area2D" parent="Punxes_single" instance=ExtResource("4_tou80")]
-position = Vector2(1323, 121)
-scale = Vector2(1.66752, 1.57795)
+[node name="Camí baix" type="Node" parent="Punxes_single"]
 
-[node name="Area2D4" parent="Punxes_single" instance=ExtResource("4_tou80")]
-position = Vector2(1423, 121)
-scale = Vector2(1.66752, 1.57795)
-
-[node name="Area2D2" parent="Punxes_single" instance=ExtResource("4_tou80")]
+[node name="Area2D2" parent="Punxes_single/Camí baix" instance=ExtResource("4_tou80")]
 position = Vector2(8620, -60)
 rotation = 3.14159
 scale = Vector2(1.66752, 1.57795)
 
-[node name="Area2D3" parent="Punxes_single" instance=ExtResource("4_tou80")]
+[node name="Area2D3" parent="Punxes_single/Camí baix" instance=ExtResource("4_tou80")]
 position = Vector2(9299, -61)
 rotation = 3.14159
 scale = Vector2(1.66752, 1.57795)
 
-[node name="Area2D6" parent="Punxes_single" instance=ExtResource("4_tou80")]
+[node name="Area2D6" parent="Punxes_single/Camí baix" instance=ExtResource("4_tou80")]
 position = Vector2(10301, -61)
 rotation = 3.14159
 scale = Vector2(1.66752, 1.57795)
 
-[node name="Area2D8" parent="Punxes_single" instance=ExtResource("4_tou80")]
+[node name="Area2D8" parent="Punxes_single/Camí baix" instance=ExtResource("4_tou80")]
 position = Vector2(10907, -64)
 rotation = 3.14159
 scale = Vector2(1.66752, 1.57795)
 
-[node name="Area2D5" parent="Punxes_single" instance=ExtResource("4_tou80")]
+[node name="Area2D5" parent="Punxes_single/Camí baix" instance=ExtResource("4_tou80")]
 position = Vector2(10068, 127)
 scale = Vector2(1.66752, 1.57795)
 
-[node name="Area2D7" parent="Punxes_single" instance=ExtResource("4_tou80")]
+[node name="Area2D7" parent="Punxes_single/Camí baix" instance=ExtResource("4_tou80")]
 position = Vector2(10583, 120)
 scale = Vector2(1.66752, 1.57795)
 
-[node name="Area2D10" parent="Punxes_single" instance=ExtResource("4_tou80")]
+[node name="Area2D10" parent="Punxes_single/Camí baix" instance=ExtResource("4_tou80")]
 position = Vector2(12253, 126)
 scale = Vector2(1.66752, 1.57795)
 
-[node name="Area2D11" parent="Punxes_single" instance=ExtResource("4_tou80")]
+[node name="Area2D11" parent="Punxes_single/Camí baix" instance=ExtResource("4_tou80")]
 position = Vector2(12347, 125)
 scale = Vector2(1.66752, 1.57795)
 
-[node name="Area2D9" parent="Punxes_single" instance=ExtResource("4_tou80")]
+[node name="Area2D9" parent="Punxes_single/Camí baix" instance=ExtResource("4_tou80")]
 position = Vector2(11279, 123)
+scale = Vector2(1.66752, 1.57795)
+
+[node name="PunxesSotaTrampa" type="Node" parent="Punxes_single/Camí baix"]
+
+[node name="Area2D2" parent="Punxes_single/Camí baix/PunxesSotaTrampa" instance=ExtResource("4_tou80")]
+position = Vector2(9315, -329)
+rotation = 3.14159
+scale = Vector2(0.921772, 0.929985)
+
+[node name="Area2D3" parent="Punxes_single/Camí baix/PunxesSotaTrampa/Area2D2" instance=ExtResource("4_tou80")]
+position = Vector2(-173.944, -0.442108)
+scale = Vector2(1, 1)
+
+[node name="Area2D6" parent="Punxes_single/Camí baix/PunxesSotaTrampa/Area2D2" instance=ExtResource("4_tou80")]
+position = Vector2(-54.2441, -1.07547)
+scale = Vector2(1, 1)
+
+[node name="Area2D8" parent="Punxes_single/Camí baix/PunxesSotaTrampa/Area2D2" instance=ExtResource("4_tou80")]
+position = Vector2(-112.826, -1.07562)
+scale = Vector2(1, 1)
+
+[node name="Area2D5" parent="Punxes_single/Camí baix/PunxesSotaTrampa/Area2D2" instance=ExtResource("4_tou80")]
+position = Vector2(-235.419, 0.000427246)
+rotation = -0.0263248
+scale = Vector2(1, 1)
+
+[node name="Area2D7" parent="Punxes_single/Camí baix/PunxesSotaTrampa/Area2D2" instance=ExtResource("4_tou80")]
+position = Vector2(-356.924, -0.00125122)
+rotation = 0.00131974
+scale = Vector2(1, 1)
+
+[node name="Area2D10" parent="Punxes_single/Camí baix/PunxesSotaTrampa/Area2D2" instance=ExtResource("4_tou80")]
+position = Vector2(-294, -0.00183105)
+rotation = 0.00370862
+scale = Vector2(1, 1)
+
+[node name="Area2D4" parent="Punxes_single/Camí baix/PunxesSotaTrampa/Area2D2" instance=ExtResource("4_tou80")]
+position = Vector2(-415.506, -0.00112915)
+
+[node name="Area2D9" parent="Punxes_single/Camí baix/PunxesSotaTrampa/Area2D2" instance=ExtResource("4_tou80")]
+position = Vector2(-589.45, 0.63205)
+scale = Vector2(1, 1)
+
+[node name="Area2D11" parent="Punxes_single/Camí baix/PunxesSotaTrampa/Area2D2" instance=ExtResource("4_tou80")]
+position = Vector2(-469.75, -0.00131226)
+scale = Vector2(1, 1)
+
+[node name="Area2D12" parent="Punxes_single/Camí baix/PunxesSotaTrampa/Area2D2" instance=ExtResource("4_tou80")]
+position = Vector2(-528.332, -0.00140381)
+scale = Vector2(1, 1)
+
+[node name="Area2D13" parent="Punxes_single/Camí baix/PunxesSotaTrampa/Area2D2" instance=ExtResource("4_tou80")]
+position = Vector2(-650.925, 1.07465)
+rotation = -0.0263248
+scale = Vector2(1, 1)
+
+[node name="Principi" type="Node" parent="Punxes_single"]
+
+[node name="Area2D" parent="Punxes_single/Principi" instance=ExtResource("4_tou80")]
+position = Vector2(1323, 121)
+scale = Vector2(1.66752, 1.57795)
+
+[node name="Area2D4" parent="Punxes_single/Principi" instance=ExtResource("4_tou80")]
+position = Vector2(1423, 121)
 scale = Vector2(1.66752, 1.57795)
 
 [node name="Punxes_collective" type="Node" parent="."]
@@ -4159,22 +4231,18 @@ position = Vector2(1488.11, 5.85913)
 [node name="Area2D86" parent="Punxes_collective/Trampa/Area2D86" instance=ExtResource("5_s8inu")]
 texture_filter = 1
 position = Vector2(1854.19, 11.7183)
-scale = Vector2(1, 1)
 
 [node name="Area2D87" parent="Punxes_collective/Trampa/Area2D86" instance=ExtResource("5_s8inu")]
 texture_filter = 1
 position = Vector2(2232.17, 5.85913)
-scale = Vector2(1, 1)
 
 [node name="Area2D88" parent="Punxes_collective/Trampa/Area2D86" instance=ExtResource("5_s8inu")]
 texture_filter = 1
 position = Vector2(2598.24, 17.5771)
-scale = Vector2(1, 1)
 
 [node name="Area2D89" parent="Punxes_collective/Trampa/Area2D86" instance=ExtResource("5_s8inu")]
 texture_filter = 1
 position = Vector2(2976.22, 11.7183)
-scale = Vector2(1, 1)
 
 [node name="doblesalt" type="Node" parent="."]
 
