@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://xfbkulrk8bsk"]
+
+[ext_resource type="Texture2D" uid="uid://bqiya4acl3tln" path="res://Sprites/2x jump.png" id="1_q6exe"]
+
+[sub_resource type="GDScript" id="GDScript_35kux"]
+script/source = "extends Area2D
+
+func _on_body_entered(body):
+	if body.name == \"CharacterBody2D\":
+		body.jump()
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvifa"]
+atlas = ExtResource("1_q6exe")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mcf1"]
+atlas = ExtResource("1_q6exe")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bp3s"]
+atlas = ExtResource("1_q6exe")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4hvd"]
+atlas = ExtResource("1_q6exe")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pwot"]
+atlas = ExtResource("1_q6exe")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amxec"]
+atlas = ExtResource("1_q6exe")
+region = Rect2(750, 0, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kro0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvifa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mcf1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bp3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4hvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pwot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amxec")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_74s3u"]
+radius = 36.0
+height = 94.0
+
+[node name="Area2D" type="Area2D"]
+script = SubResource("GDScript_35kux")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(163, 167)
+rotation = -1.56628
+sprite_frames = SubResource("SpriteFrames_kro0s")
+frame_progress = 0.924664
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(160, 158)
+shape = SubResource("CapsuleShape2D_74s3u")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
