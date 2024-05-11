@@ -237,7 +237,7 @@ animation = &"ship"
 autoplay = "none"
 
 [node name="trail2" type="AnimatedSprite2D" parent="."]
-position = Vector2(-71, -40)
+position = Vector2(-65, -34)
 rotation = -1.76531
 scale = Vector2(0.346239, 0.293706)
 sprite_frames = SubResource("SpriteFrames_yn2pl")
