@@ -12,6 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animacio = $AnimatedSprite2D
 @onready var rocket = $rocket
 @onready var trail_2 = $trail2
+@onready var audio = $AudioStreamPlayer2D
 
 var is_exploding = false
 var is_portal = false
@@ -58,6 +59,8 @@ func _physics_process(delta):
 			if Input.is_action_pressed("ui_up"):
 				velocity.y = ship_accel * JUMP_VELOCITY
 				velocity.x = SPEED
+				trail.animation = "none"
+				trail_2.animation = "none"
 				#var tween_ship = create_tween()
 				#var tween = create_tween()
 				#tween_ship.tween_property($AnimatedSprite2D, "rotation_degrees", $AnimatedSprite2D.rotation_degrees - fmod($AnimatedSprite2D.rotation_degrees, 50), 0.6).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
@@ -80,14 +83,16 @@ func mor():
 	is_portal_g = false
 	trail.animation = "none"
 	rocket.animation = "none"
+	audio.stop()
+	audio.play()
 	animacio.animation = "explosion"
-	animacio.play()
+	animacio.play()	
 	animacio.connect("animation_finished", _on_AnimatedSprite2D_animation_finished)
 	
 func _on_AnimatedSprite2D_animation_finished():
 	animacio.disconnect("animation_finished",_on_AnimatedSprite2D_animation_finished)
 
-	position = Vector2(100.25,position.y)
+	position = Vector2(-4698,position.y)
 	animacio.animation = "default"
 	animacio.play()
 	is_exploding = false
@@ -104,7 +109,7 @@ func portal_g():
 	is_portal_g = true
 	rocket.animation = "none"
 	
-func portal_nomal():
+func portal_normal():
 	is_portal = false
 	is_portal_g = false
 	rocket.animation = "none"
