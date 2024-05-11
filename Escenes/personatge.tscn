@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cihqwh5xtdlsp"]
+[gd_scene load_steps=32 format=3 uid="uid://cihqwh5xtdlsp"]
 
 [ext_resource type="Script" path="res://Guions/CharacterBody2D.gd" id="1_y78ei"]
 [ext_resource type="Texture2D" uid="uid://6ou2y8dt4oew" path="res://Sprites/icon.svg" id="2_d1eeh"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://oad260kiawta" path="res://Sprites/images-removebg-preview.png" id="4_ph7dq"]
 [ext_resource type="Texture2D" uid="uid://dbi16iyqhiayt" path="res://Sprites/5398536-removebg-preview.png" id="5_ukygu"]
 [ext_resource type="Texture2D" uid="uid://cf62jeaenua6v" path="res://Sprites/Coet-removebg-preview.png" id="6_27gs2"]
+[ext_resource type="AudioStream" uid="uid://cuklj383y2yct" path="res://Martin Garrix - Animals (Official Video).mp3" id="7_hx05c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2m7le"]
 size = Vector2(83.5, 76.75)
@@ -241,5 +242,9 @@ rotation = -1.76531
 scale = Vector2(0.346239, 0.293706)
 sprite_frames = SubResource("SpriteFrames_yn2pl")
 autoplay = "default"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_hx05c")
+autoplay = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

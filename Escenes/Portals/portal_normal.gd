@@ -1,5 +1,9 @@
-extends Area2D
+extends Node
 
 
 func _on_body_entered(body):
-	body.portal_normal()
+	if body.name == "TileMap":
+		pass
+	
+	else:
+		body.portal_normal()
