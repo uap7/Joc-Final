@@ -6,7 +6,7 @@
 script/source = "extends Area2D
 
 func _on_body_entered(body):
-	if body.name == \"CharacterBody2D\":
+	if body.name == \"CharacterBody2D\" and Input.is_action_pressed(\"ui_up\"):
 		body.jump()
 "
 
@@ -71,7 +71,8 @@ script = SubResource("GDScript_35kux")
 position = Vector2(163, 167)
 rotation = -1.56628
 sprite_frames = SubResource("SpriteFrames_kro0s")
-frame_progress = 0.924664
+autoplay = "default"
+frame_progress = 0.654251
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(160, 158)

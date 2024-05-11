@@ -22,7 +22,7 @@ func _ready():
 	velocity.x = SPEED
 	
 func jump():
-	velocity.y = JUMP_VELOCITY
+	velocity.y = -1500
 
 func _physics_process(delta):
 	if not is_exploding:
@@ -37,7 +37,7 @@ func _physics_process(delta):
 					trail_2.animation = "none"
 	
 				if Input.is_action_pressed("ui_up") and is_on_floor():
-					jump()
+					velocity.y = JUMP_VELOCITY
 					var tween = create_tween()
 					tween.tween_property($AnimatedSprite2D, "rotation_degrees", $AnimatedSprite2D.rotation_degrees - fmod($AnimatedSprite2D.rotation_degrees, 90) + 2*90, 0.6).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 			elif is_portal_g:

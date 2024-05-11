@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://iylt1ph0fwsf"]
+[gd_scene load_steps=9 format=3 uid="uid://iylt1ph0fwsf"]
 
 [ext_resource type="Texture2D" uid="uid://co5efa62ir55g" path="res://Sprites/Tilemap/TILEMAP.png" id="1_uqxne"]
 [ext_resource type="PackedScene" uid="uid://cihqwh5xtdlsp" path="res://Escenes/Personatge.tscn" id="2_5lcv0"]
 [ext_resource type="PackedScene" uid="uid://dx03nt2sh7wx0" path="res://Escenes/Portals/portal.tscn" id="3_juu8s"]
 [ext_resource type="PackedScene" uid="uid://d6j2gk0evin7" path="res://Escenes/Punxes/Punxa.tscn" id="4_tou80"]
 [ext_resource type="PackedScene" uid="uid://cnecl7u5kbi64" path="res://Escenes/Punxes/Punxes2.tscn" id="5_s8inu"]
+[ext_resource type="PackedScene" uid="uid://xfbkulrk8bsk" path="res://Guions/salta_auto.tscn" id="6_ch45g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6xsts"]
 texture = ExtResource("1_uqxne")
@@ -4045,3 +4046,6 @@ position = Vector2(3640.68, -344.981)
 rotation = 3.14123
 scale = Vector2(0.335996, 0.682715)
 skew = 0.000206828
+
+[node name="Area2D" parent="." instance=ExtResource("6_ch45g")]
+position = Vector2(818, -130)
