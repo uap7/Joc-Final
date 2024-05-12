@@ -73,14 +73,13 @@ func _physics_process(delta):
 	if is_zero_approx(velocity.x):
 		mor()
 
-
 func mor():
 	is_exploding = true
 	is_portal_g = false
 	trail.animation = "none"
 	rocket.animation = "none"
-	audio.stop()
-	audio.play()
+	#audio.stop()
+	#audio.play()
 	animacio.animation = "explosion"
 	animacio.play()	
 	animacio.connect("animation_finished", _on_AnimatedSprite2D_animation_finished)
