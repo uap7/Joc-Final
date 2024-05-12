@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Joc Final"
-run/main_scene="res://Escenes/Prova_personatge.tscn"
+run/main_scene="res://Escenes/NIVELL_FINAL.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://Sprites/icon.svg"
 

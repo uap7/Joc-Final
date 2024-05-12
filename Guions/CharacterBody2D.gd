@@ -86,7 +86,8 @@ func mor():
 	
 func _on_AnimatedSprite2D_animation_finished():
 	animacio.disconnect("animation_finished",_on_AnimatedSprite2D_animation_finished)
-
+	audio.stop()
+	audio.play()
 	position = Vector2(-4698,position.y)
 	animacio.animation = "default"
 	animacio.play()
