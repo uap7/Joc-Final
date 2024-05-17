@@ -78,8 +78,8 @@ func mor():
 	is_portal_g = false
 	trail.animation = "none"
 	rocket.animation = "none"
-	#audio.stop()
-	#audio.play()
+	audio.stop()
+	audio.play()
 	animacio.animation = "explosion"
 	animacio.play()	
 	animacio.connect("animation_finished", _on_AnimatedSprite2D_animation_finished)
