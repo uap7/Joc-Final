@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw52r7178841m"]
+
+[ext_resource type="Script" path="res://botto.gd" id="1_lssbi"]
+
+[node name="botto" type="Node2D"]
+script = ExtResource("1_lssbi")
+
+[node name="Button" type="Button" parent="."]
+offset_right = 89.0
+offset_bottom = 44.0
+text = "Main menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

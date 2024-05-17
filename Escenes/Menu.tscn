@@ -20,10 +20,10 @@ texture = ExtResource("2_5c6kh")
 
 [node name="Button" type="Button" parent="BotoIntro"]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = -169.0
-offset_top = -180.0
-offset_right = 174.0
-offset_bottom = 174.0
+offset_left = -177.488
+offset_top = -182.244
+offset_right = 165.512
+offset_bottom = 171.756
 script = ExtResource("3_t4cfe")
 
 [node name="BotoConfTutorial" type="Sprite2D" parent="."]
