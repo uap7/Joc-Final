@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1ua0nww47gut"]
+
+[ext_resource type="Texture2D" uid="uid://bl6xm5iso4721" path="res://Escenes/Instruccions.png" id="1_h7fnq"]
+[ext_resource type="Script" path="res://Button_Instruccions_Tornada.gd" id="2_fw3gl"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Instruccions" type="Sprite2D" parent="."]
+position = Vector2(625, 332)
+scale = Vector2(0.338995, 0.324707)
+texture = ExtResource("1_h7fnq")
+
+[node name="Button" type="Button" parent="Instruccions"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -1832.0
+offset_top = -853.0
+offset_right = -1566.0
+offset_bottom = -588.0
+script = ExtResource("2_fw3gl")
+
+[connection signal="pressed" from="Instruccions/Button" to="Instruccions/Button" method="_on_pressed"]
