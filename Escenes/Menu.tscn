@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://1x6aflafqdht"]
+
+[ext_resource type="Texture2D" uid="uid://cv7ogfd36113q" path="res://Fons intro(nom correcte).png" id="1_amo6v"]
+[ext_resource type="Texture2D" uid="uid://ciiaey61mvkll" path="res://boto intro.png" id="2_5c6kh"]
+[ext_resource type="Script" path="res://ButtonMenu.gd" id="3_t4cfe"]
+[ext_resource type="Texture2D" uid="uid://bs2v72b0qmr35" path="res://boto conf_tutorial.png" id="4_l8qjr"]
+[ext_resource type="Script" path="res://Escenes/Button_Conf.gd" id="5_t4pnl"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="FonsIntro(nomCorrecte)" type="Sprite2D" parent="."]
+position = Vector2(590, 309)
+scale = Vector2(0.315341, 0.342651)
+texture = ExtResource("1_amo6v")
+
+[node name="BotoIntro" type="Sprite2D" parent="."]
+position = Vector2(568, 340)
+scale = Vector2(0.602857, 0.554201)
+texture = ExtResource("2_5c6kh")
+
+[node name="Button" type="Button" parent="BotoIntro"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -169.0
+offset_top = -180.0
+offset_right = 174.0
+offset_bottom = 174.0
+script = ExtResource("3_t4cfe")
+
+[node name="BotoConfTutorial" type="Sprite2D" parent="."]
+position = Vector2(793, 329)
+scale = Vector2(0.395765, 0.381579)
+texture = ExtResource("4_l8qjr")
+
+[node name="Button" type="Button" parent="BotoConfTutorial"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -129.0
+offset_top = -110.0
+offset_right = 141.0
+offset_bottom = 157.0
+script = ExtResource("5_t4pnl")
+
+[connection signal="pressed" from="BotoIntro/Button" to="BotoIntro/Button" method="_on_pressed"]
+[connection signal="pressed" from="BotoConfTutorial/Button" to="BotoConfTutorial/Button" method="_on_pressed"]
