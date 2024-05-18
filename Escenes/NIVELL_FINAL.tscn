@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://iylt1ph0fwsf"]
+[gd_scene load_steps=14 format=3 uid="uid://iylt1ph0fwsf"]
 
 [ext_resource type="Texture2D" uid="uid://co5efa62ir55g" path="res://Sprites/Tilemap/TILEMAP.png" id="1_uqxne"]
 [ext_resource type="PackedScene" uid="uid://cihqwh5xtdlsp" path="res://Escenes/personatge.tscn" id="2_5lcv0"]
@@ -3544,6 +3544,9 @@ texture = ExtResource("1_uqxne")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_6xsts")
 
+[sub_resource type="LabelSettings" id="LabelSettings_e2e0k"]
+font_size = 100
+
 [node name="Tilemap de prova" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -3558,7 +3561,7 @@ layer_0/tile_data = PackedInt32Array(524288, 1048576, 5, 589824, 1048576, 6, 655
 position = Vector2(48985, -14)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_5lcv0")]
-position = Vector2(-3997, -877)
+position = Vector2(-3795, -70)
 
 [node name="Portals" type="Node" parent="."]
 script = ExtResource("3_xxnu3")
@@ -4709,3 +4712,11 @@ position = Vector2(30051, -64)
 
 [node name="Area2D7" parent="doblesalt" instance=ExtResource("9_5rxit")]
 position = Vector2(42709, -43)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -2665.0
+offset_top = -254.0
+offset_right = -160.0
+offset_bottom = 23.0
+text = "Pots prémer Esc per tornar al menú principal del joc"
+label_settings = SubResource("LabelSettings_e2e0k")

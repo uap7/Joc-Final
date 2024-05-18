@@ -14,6 +14,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var trail_2 = $trail2
 @onready var audio = $AudioStreamPlayer2D
 
+var mor_menu = false
 var is_exploding = false
 var is_portal = false
 var is_portal_g = false
@@ -72,6 +73,10 @@ func _physics_process(delta):
 	
 	if is_zero_approx(velocity.x):
 		mor()
+		
+	if Input.is_action_just_pressed("ui_cancel"):
+		mor_menu = true
+		mor()
 
 func mor():
 	is_exploding = true
@@ -87,13 +92,17 @@ func mor():
 func _on_AnimatedSprite2D_animation_finished():
 	animacio.disconnect("animation_finished",_on_AnimatedSprite2D_animation_finished)
 	audio.stop()
-	audio.play()
-	position = Vector2(-4698,position.y)
-	animacio.animation = "default"
-	animacio.play()
-	is_exploding = false
-	is_portal = false
-	rocket.animation = "none"
+	if mor_menu == false:
+		audio.play()
+		position = Vector2(-4698,position.y)
+		animacio.animation = "default"
+		animacio.play()
+		is_exploding = false
+		is_portal = false
+		rocket.animation = "none"
+	elif mor_menu == true:
+		get_tree().change_scene_to_file("res://Escenes/Menu.tscn")
+		mor_menu = false
 
 func portal():
 	rocket.animation = "ship"
