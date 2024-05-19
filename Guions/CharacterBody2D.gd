@@ -18,6 +18,7 @@ var mor_menu = false
 var is_exploding = false
 var is_portal = false
 var is_portal_g = false
+var winning = false
 
 func _ready():
 	animacio.animation = "default"
@@ -28,48 +29,49 @@ func jump():
 
 func _physics_process(delta):
 	if not is_exploding:
-		if not is_portal:
-			if not is_portal_g:
-				if not is_on_floor():
-					velocity.y += gravity * delta
-					trail.animation = "none"
-					trail_2.animation = "none"
-				if is_on_floor():
-					trail.animation = "default"
-					trail_2.animation = "none"
+		if not winning:
+			if not is_portal:
+				if not is_portal_g:
+					if not is_on_floor():
+						velocity.y += gravity * delta
+						trail.animation = "none"
+						trail_2.animation = "none"
+					if is_on_floor():
+						trail.animation = "default"
+						trail_2.animation = "none"
 	
-				if Input.is_action_pressed("ui_up") and is_on_floor():
-					velocity.y = JUMP_VELOCITY
-					var tween = create_tween()
-					tween.tween_property($AnimatedSprite2D, "rotation_degrees", $AnimatedSprite2D.rotation_degrees - fmod($AnimatedSprite2D.rotation_degrees, 90) + 2*90, 0.6).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
-			elif is_portal_g:
-				if not is_on_ceiling():
-					velocity.y += (-gravity) * delta
-					trail_2.animation = "none"
-					trail.animation = "none"
-				if is_on_ceiling():
-					trail_2.animation = "default"
-					trail.animation = "none"
+					if Input.is_action_pressed("ui_up") and is_on_floor():
+						velocity.y = JUMP_VELOCITY
+						var tween = create_tween()
+						tween.tween_property($AnimatedSprite2D, "rotation_degrees", $AnimatedSprite2D.rotation_degrees - fmod($AnimatedSprite2D.rotation_degrees, 90) + 2*90, 0.6).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+				elif is_portal_g:
+					if not is_on_ceiling():
+						velocity.y += (-gravity) * delta
+						trail_2.animation = "none"
+						trail.animation = "none"
+					if is_on_ceiling():
+						trail_2.animation = "default"
+						trail.animation = "none"
 	
-				if Input.is_action_pressed("ui_up") and is_on_ceiling():
-					velocity.y = -JUMP_VELOCITY
-					var tween = create_tween()
-					tween.tween_property($AnimatedSprite2D, "rotation_degrees", $AnimatedSprite2D.rotation_degrees - fmod($AnimatedSprite2D.rotation_degrees, -90) + 2*(-90), 0.6).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
-					#var tween = create_tween()
-					#tween.tween_property($AnimatedSprite2D, "rotation_degrees", $AnimatedSprite2D.rotation_degrees - fmod($AnimatedSprite2D.rotation_degrees, 50), 0.6).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+					if Input.is_action_pressed("ui_up") and is_on_ceiling():
+						velocity.y = -JUMP_VELOCITY
+						var tween = create_tween()
+						tween.tween_property($AnimatedSprite2D, "rotation_degrees", $AnimatedSprite2D.rotation_degrees - fmod($AnimatedSprite2D.rotation_degrees, -90) + 2*(-90), 0.6).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+						#var tween = create_tween()
+						#tween.tween_property($AnimatedSprite2D, "rotation_degrees", $AnimatedSprite2D.rotation_degrees - fmod($AnimatedSprite2D.rotation_degrees, 50), 0.6).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 					
-			velocity.x = SPEED
-		elif is_portal:
-			if Input.is_action_pressed("ui_up"):
-				velocity.y = ship_accel * JUMP_VELOCITY
 				velocity.x = SPEED
-				trail.animation = "none"
-				trail_2.animation = "none"
+			elif is_portal:
+				if Input.is_action_pressed("ui_up"):
+					velocity.y = ship_accel * JUMP_VELOCITY
+					velocity.x = SPEED
+					trail.animation = "none"
+					trail_2.animation = "none"
 				
-			else:
-				velocity.y += gravity * delta
+				else:
+					velocity.y += gravity * delta
 	
-		move_and_slide()
+			move_and_slide()
 	
 	if is_zero_approx(velocity.x):
 		mor()
@@ -91,9 +93,7 @@ func mor():
 	
 func _on_AnimatedSprite2D_animation_finished():
 	animacio.disconnect("animation_finished",_on_AnimatedSprite2D_animation_finished)
-	audio.stop()
 	if mor_menu == false:
-		audio.play()
 		position = Vector2(-4698,position.y)
 		animacio.animation = "default"
 		animacio.play()
@@ -101,6 +101,7 @@ func _on_AnimatedSprite2D_animation_finished():
 		is_portal = false
 		rocket.animation = "none"
 	elif mor_menu == true:
+		audio.stop()
 		get_tree().change_scene_to_file("res://Escenes/Menu.tscn")
 		mor_menu = false
 
@@ -119,9 +120,10 @@ func portal_normal():
 	is_portal_g = false
 	rocket.animation = "none"
 
+func win():
+	winning = true
+	animacio.animation = "Win"
 
-
-
-
-func _on_button_pressed():
-	pass # Replace with function body.
+func _on_animated_sprite_2d_animation_finished():
+	get_tree().change_scene_to_file("res://Escenes/you_win.tscn")
+	animacio.animation = "default"

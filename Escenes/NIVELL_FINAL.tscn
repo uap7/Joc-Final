@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://iylt1ph0fwsf"]
 
 [ext_resource type="Texture2D" uid="uid://co5efa62ir55g" path="res://Sprites/Tilemap/TILEMAP.png" id="1_uqxne"]
-[ext_resource type="PackedScene" uid="uid://cihqwh5xtdlsp" path="res://Escenes/personatge.tscn" id="2_5lcv0"]
+[ext_resource type="PackedScene" uid="uid://cihqwh5xtdlsp" path="res://Escenes/Personatge.tscn" id="2_5lcv0"]
 [ext_resource type="PackedScene" uid="uid://dx03nt2sh7wx0" path="res://Escenes/Portals/portal.tscn" id="3_juu8s"]
 [ext_resource type="Script" path="res://Escenes/Portals/portal_normal.gd" id="3_xxnu3"]
 [ext_resource type="PackedScene" uid="uid://d6j2gk0evin7" path="res://Escenes/Punxes/Punxa.tscn" id="4_tou80"]
@@ -3561,7 +3561,7 @@ layer_0/tile_data = PackedInt32Array(524288, 1048576, 5, 589824, 1048576, 6, 655
 position = Vector2(48985, -14)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_5lcv0")]
-position = Vector2(-3795, -70)
+position = Vector2(-4039.9, 121.237)
 
 [node name="Portals" type="Node" parent="."]
 script = ExtResource("3_xxnu3")
