@@ -13,6 +13,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var rocket = $rocket
 @onready var trail_2 = $trail2
 @onready var audio = $AudioStreamPlayer2D
+@onready var winner = $Win
 
 var mor_menu = false
 var is_exploding = false
@@ -22,6 +23,7 @@ var winning = false
 
 func _ready():
 	animacio.animation = "default"
+	winner.animation = "none"
 	velocity.x = SPEED
 	
 func jump():
@@ -73,12 +75,12 @@ func _physics_process(delta):
 	
 			move_and_slide()
 	
-	if is_zero_approx(velocity.x):
-		mor()
+		if is_zero_approx(velocity.x):
+			mor()
 		
-	if Input.is_action_just_pressed("ui_cancel"):
-		mor_menu = true
-		mor()
+		if Input.is_action_just_pressed("ui_cancel"):
+			mor_menu = true
+			mor()
 
 func mor():
 	is_exploding = true
@@ -122,8 +124,10 @@ func portal_normal():
 
 func win():
 	winning = true
-	animacio.animation = "Win"
+	winner.animation = "default"
+	animacio.animation = "none"
 
-func _on_animated_sprite_2d_animation_finished():
+func _on_win_animation_finished():
 	get_tree().change_scene_to_file("res://Escenes/you_win.tscn")
 	animacio.animation = "default"
+	winner.animation = "none"
