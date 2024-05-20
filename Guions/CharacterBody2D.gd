@@ -128,6 +128,6 @@ func win():
 	animacio.animation = "none"
 
 func _on_win_animation_finished():
-	get_tree().change_scene_to_file("res://Escenes/you_win.tscn")
+	get_tree().change_scene_to_file("res://felicitaciófons.tscn")
 	animacio.animation = "default"
 	winner.animation = "none"
